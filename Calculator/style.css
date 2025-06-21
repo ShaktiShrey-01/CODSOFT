@@ -1,0 +1,255 @@
+body {
+
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+
+    background-size: 400% 400%;
+
+    animation: gradientBG 15s ease infinite;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    height: 100vh;
+
+    margin: 0;
+
+    overflow: hidden;
+
+}
+
+@keyframes gradientBG {
+
+    0% { background-position: 0% 50%; }
+
+    50% { background-position: 100% 50%; }
+
+    100% { background-position: 0% 50%; }
+
+}
+
+.calculator {
+
+    background-color: rgba(255, 255, 255, 0.85);
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    padding: 25px;
+
+    width: 300px;
+
+    backdrop-filter: blur(5px);
+
+    transform: perspective(500px) rotateX(0deg);
+
+    transition: transform 0.5s;
+
+}
+
+.calculator:hover {
+
+    transform: perspective(500px) rotateX(10deg);
+
+}
+
+.display {
+
+    background-color: #f0f0f0;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    text-align: right;
+
+    font-size: 32px;
+
+    height: 40px;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.display span {
+
+    position: absolute;
+
+    right: 15px;
+
+    transition: all 0.3s;
+
+}
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+button {
+
+    border: none;
+
+    border-radius: 50%;
+
+    height: 60px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    background-color: #fff;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+button::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -50%;
+
+    width: 200%;
+
+    height: 200%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    transform: rotate(45deg);
+
+    transition: all 0.3s;
+
+    opacity: 0;
+
+}
+
+button:hover {
+
+    transform: translateY(-5px) scale(1.05);
+
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+button:hover::before {
+
+    opacity: 1;
+
+    animation: shine 1.5s infinite;
+
+}
+
+@keyframes shine {
+
+    0% { left: -50%; top: -50%; }
+
+    100% { left: 150%; top: 150%; }
+
+}
+
+button:active {
+
+    transform: translateY(0) scale(0.95);
+
+}
+
+.operator-btn {
+
+    background-color: #ff9a9e;
+
+    color: white;
+
+}
+
+.clear-btn {
+
+    background-color: #a6c1ee;
+
+    color: white;
+
+}
+
+.equals-btn {
+
+    background-color: #fbc2eb;
+
+    color: white;
+
+    grid-column: span 2;
+
+    border-radius: 30px;
+
+}
+
+.number-btn {
+
+    background-color: #84fab0;
+
+    color: #333;
+
+}
+
+.confetti {
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    background-color: #f00;
+
+    border-radius: 50%;
+
+    animation: confettiFall 5s linear forwards;
+
+}
+
+@keyframes confettiFall {
+
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+
+}
+
+.history {
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #666;
+
+    text-align: right;
+
+    height: 20px;
+
+    overflow: hidden;
+
+}
