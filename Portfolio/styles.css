@@ -1,0 +1,654 @@
+/* Custom CSS for transparent navbar */
+body {
+    background-image: url('https://www.stockvault.net/data/2020/09/24/279149/preview16.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+/* navbar css started */
+.navbar {
+    background-color: transparent !important; /* Make navbar background transparent */
+}
+
+/* Optional: Add a slight shadow to make the navbar text readable on any background */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom CSS for brand name */
+#brand-name {
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white !important; /* Change brand name color to white */
+}
+
+/* Change toggle button color to white */
+.navbar-toggler-icon {
+    filter: invert(1); /* Invert the color to white */
+}
+
+/* Custom CSS for navlinks */
+#nav-links .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    color: white !important; /* Change navlinks color to white */
+}
+#nav-links .nav-link:hover {
+    color: rgba(117, 10, 211, 0.8) !important; /* Change navlinks color on hover */
+}
+
+/* Change active navlink color */
+#nav-links .nav-link.active {
+    color: rgba(0, 17, 255, 0.975) !important; /* Ensure active link is also white */
+}
+
+/* Custom CSS for the Sign Up button */
+#hire-button {
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, rgb(117, 10, 211), rgba(0, 0, 0, 0.433));
+    border: 2px solid rgb(71, 6, 131);
+    box-shadow: 0 2px 2px 0 rgb(67, 1, 129), 0 2px 1px 0 rgb(44, 1, 83);
+    border-radius: 20px;
+}
+
+#hire-button:hover {
+    transition: 0.4s ease;
+    transform: scale(0.8);
+}
+/* navbar css ended */
+
+/*css for span tag(contains text and download cv btn) and image tag */
+/* Custom CSS for the new span tag */
+.responsive-span {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between rows */
+    margin-top: 10px; /* Increased space below navbar */
+    margin-left: 50px; /* Increased space from the left side */
+    max-width: 90%; /* Ensure it doesn't overflow on small screens */
+}
+
+.responsive-span p {
+    font-size: 1.9rem;
+    color: white;
+    font-family: monospace;
+    margin: 0;
+    width: 90%; /* Increased width to 40% */
+    background: linear-gradient(to top, rgba(117, 10, 211, 0.8), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.responsive-span .main-button {
+    border-radius:50%;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 10px;
+    background-color: black;
+    color:  rgba(117, 10, 211, 0.8);
+    border: 3px solid  rgba(117, 10, 211, 0.8);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 40%; /* Reduced width to 20% */
+}
+
+.responsive-span .main-button:hover {
+    background-color: whitesmoke;
+    transition: 1s ease;
+    transform: scale(0.8);
+}
+
+.responsive-span .small-buttons {
+    display: flex;
+    gap: 10px; /* Space between small buttons */
+}
+
+.responsive-span .small-button {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color:rgba(117, 10, 211, 1) ;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.responsive-span .small-button:hover {
+    background-color: white;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+    transform: scale(0.8);
+}
+
+
+/* Custom CSS for the image tag */
+/* Container styling */
+.image-container {
+    display: flex;
+    align-items: flex-start; /* Align image to the top */
+    gap: 60px; /* Space between span tag and image */
+    margin-top: 30px; /* Match margin-top of .responsive-span */
+    margin-left: 100px; /* Match margin-left of .responsive-span */
+    margin-right: 80px;
+}
+
+/* Image styling */
+.responsive-image {
+    width: 340px; /* Fixed width for larger screens */
+    height: 290px; /* Maintain aspect ratio */
+    border: 5px solid black; /* Add border */
+    border-radius: 30px; /* Rounded corners */
+    object-fit: auto; /* Ensure image fits within the container */
+    transition: transform 1s ease, border-color 1s ease; /* Smooth transitions */
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+
+/* Pseudo-element for the border fill effect  for image started*/
+.responsive-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgb(102, 166, 188)); /* Gradient for border fill */
+    z-index: 1; /* Place it below the image */
+    transition: width 1s ease; /* Smooth transition for border fill */
+    border-radius: 30px; /* Match the image's border radius */
+}
+
+/* Hover effect */
+.image-container:hover .responsive-image::before {
+    width: 100%; /* Fill the border with blue color */
+}
+
+.image-container:hover .responsive-image {
+    transform: rotate(10deg); /* Tilt the image */
+    border-color: rgb(15, 161, 210); /* Change border color to blue */
+}
+/* Pseudo-element for the border fill effect  for image ended*/
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .responsive-span {
+        margin-left: 30px; /* Reduce left margin for smaller screens */
+    }
+
+    .responsive-span p {
+        font-size: 0.8rem; /* Smaller font size for smaller screens */
+        width: 60%; /* Increase width for smaller screens */
+    }
+
+    .responsive-span .main-button {
+        font-size: 0.5rem; /* Smaller button text for smaller screens */
+        padding: 6px 12px;
+        width: 30%; /* Increase width for smaller screens */
+    }
+
+    .responsive-span .small-button {
+        font-size: 0.5rem; /* Smaller small button text for smaller screens */
+        padding: 2px 8px;
+    }
+
+    .image-container {
+        margin-left: 30px; /* Reduce left margin for smaller screens */
+        gap: 50px; /* Reduce gap for smaller screens */
+    }
+
+    .responsive-image {
+        width: 400px; /* Smaller image for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .responsive-span {
+        margin-left: 20px; /* Further reduce left margin for mobile screens */
+        margin-top: -10px;
+    }
+
+    .responsive-span p {
+        font-size: 1.3rem; /* Even smaller font size for mobile screens */
+        width: 90%; /* Increase width for mobile screens */
+    }
+
+    .responsive-span .main-button {
+        font-size: 0.5rem; /* Smaller button text for mobile screens */
+        padding: 6px 12px;
+        width: 45%; /* Increase width for mobile screens */
+    }
+
+    .responsive-span .small-button {
+        font-size: 0.5rem; /* Smaller small button text for mobile screens */
+        padding: 2px 7px;
+    }
+
+    .image-container {
+        flex-direction: column; /* Stack span and image vertically on mobile */
+        gap: 50px; /* Space between span and image */
+    }
+
+    .responsive-image {
+        width: 70%; /* Full width for mobile screens */
+        max-width: 300px; /* Limit maximum width */
+        max-height: 200px;
+        margin-left: 45px;
+        margin-right: 1px;
+    }
+}
+/*css for span tag(contains text and download cv btn) and image tag ended */
+/* css for my skiils and education area started */
+
+.box-container {
+    width: 80%; /* 80% width for larger screens */
+    height: 400px; /* Fixed height for larger screens */
+    margin: 50px auto; /* Center the div and add space above and below */
+    padding: 20px; /* Add padding inside the div */
+    background-color: transparent; /* Semi-transparent background */
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap into multiple rows */
+    justify-content: space-between; /* Space between boxes */
+    align-content: space-between; /* Space between rows */
+    gap: 20px; /* Add gaps between boxes on PC devices */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.box-container h3 {
+    width: 100%; /* Full width for the heading */
+    text-align: center; /* Center the heading */
+    color: white; /* White text color */
+    font-family: monospace;
+    margin-bottom: 10px; /* Space below the heading */
+    font-size: 1.6rem; /* Heading font size */
+    font-weight: 900;
+    background: linear-gradient(to right, rgba(117, 10, 211, 0.8), white, rgba(136, 0, 255, 0.951));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: solid black;
+}
+
+.box {
+    width: calc(40% - 10px); /* Two boxes per row with spacing */
+    height: calc(20% - 10px); /* Four rows with spacing */
+    background-color: rgba(91, 44, 133, 0.546); /* Box background color */
+     /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    color: rgb(227, 17, 227); /* White text color */
+    font-family: monospace;
+    font-size: 1rem; /* Text font size */
+    text-align: center; /* Center text */
+    padding: 9px; /* Add padding inside boxes */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    transition: 0.5s ease;
+}
+.box:hover{
+    background-color: rgba(240, 248, 255, 0.921);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .box-container {
+        width: 90%; /* Increase width for smaller screens */
+        height: 350px; /* Reduce height for smaller screens */
+        gap: 15px; /* Reduce gaps between boxes for tablets */
+    }
+
+    .box-container h3 {
+        font-size: 1.3rem; /* Smaller heading font size */
+    }
+
+    .box {
+        font-size: 0.9rem; /* Smaller text font size */
+        width: calc(50% - 15px); /* Add more space between boxes */
+        height: calc(25% - 15px); /* Add more space between rows */
+    }
+}
+
+@media (max-width: 576px) {
+    .box-container {
+        width: 80%; /* Adjusted width for mobile screens */
+        height: 300px; /* Further reduce height for mobile screens */
+        padding: 5px; /* Reduce padding for mobile screens */
+        gap: 8px;/* Further reduce gaps between boxes for mobile devices */
+  
+    margin-right: 40px;
+    }
+
+    .box-container h3 {
+        font-size: 0.5rem; /* Even smaller heading font size */
+        margin-bottom: 10px; /* Reduce space below the heading */
+        margin-top: 10px;
+    }
+
+    .box {
+        font-size: 0.5rem; /* Even smaller text font size */
+        width: calc(50% - 10px); /* Adjusted width for mobile screens */
+        height: calc(20% - 10px); /* Adjusted height for mobile screens */
+        padding: 10px; /* Reduce padding inside boxes */
+       
+    }
+}
+
+/* Prevent horizontal scrolling on the body */
+body {
+  overflow-x: hidden; /* Prevent horizontal scrolling on the entire page */
+}
+/* css for my skiils and education area ended */
+
+
+/* Custom CSS for the new image gallery div */
+/* Custom CSS for the new image gallery div  started*/
+.image-gallery {
+    width: 900px; /* Fixed width for larger screens */
+    height: auto; /* Auto height to accommodate content */
+    margin: 50px auto; /* Center the div and add space above and below */
+    padding: 20px; /* Add padding inside the div */
+    background-color:transparent; /* Semi-transparent background */
+   
+    border-radius: 20px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack heading and images vertically */
+    align-items: center; /* Center content horizontally */
+    gap: 20px; /* Add gaps between elements */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.image-gallery h3 {
+    color: white; /* White text color */
+    font-family:monospace;
+    font-size: 2rem; /* Heading font size */
+    margin: 0; /* Remove default margin */
+    background: linear-gradient(to right, whitesmoke, rgba(117, 10, 211, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.image-gallery .image-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap into multiple rows */
+    justify-content: space-between; /* Space between images */
+    gap: 20px; /* Add gaps between images */
+    width: 100%; /* Full width of the container */
+}
+
+.image-gallery .image-item {
+    width: calc(50% - 10px); /* Two images per row with spacing */
+    text-align: center; /* Center the image and text */
+    
+}
+
+.image-gallery img {
+    width: 300px; /* Fixed width for images on PC */
+    height: 200px; /* Fixed height for images on PC */
+    border-radius: 20px; /* Rounded corners */
+    border: 2px solid black;
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+.image-gallery .image-text {
+    color: rgb(227, 17, 227); 
+    font-family:monospace;
+    font-size: 1rem; /* Text font size */
+    margin-top: 10px; /* Space above the text */
+    text-decoration: none; /* Remove underline from anchor tags */
+    display: block; /* Ensure anchor tags behave like block elements */
+
+}
+
+.image-gallery .image-text:hover {
+    color: rgba(117, 10, 211, 1); /* Change color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-gallery {
+        width: 500px; /* Reduce width for tablets */
+        gap: 15px; /* Reduce gaps between elements */
+    }
+
+    .image-gallery img {
+        width: 150px; /* Reduce width for tablets */
+        height: 150px; /* Reduce height for tablets */
+    }
+
+    .image-gallery .image-text {
+        font-size: 0.9rem; /* Smaller text font size for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .image-gallery {
+        width: 90%; /* Full width for mobile screens */
+        padding: 15px; /* Reduce padding for mobile screens */
+        gap: 10px; /* Further reduce gaps between elements */
+        height: 370px;
+    }
+
+    .image-gallery img {
+        width: 120px; /* Further reduce width for mobile screens */
+        height: 120px; /* Further reduce height for mobile screens */
+    }
+
+    .image-gallery .image-text {
+        font-size: 0.5rem; /* Even smaller text font size for mobile screens */
+    }
+    .image-gallery h3{
+        font-size: 1.3rem;
+    }
+}
+/* Custom CSS for the new image gallery div ended */
+/* css for conatct form started */
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between the two divs */
+    gap: 50px; /* Space between the two divs */
+    margin: 50px auto; /* Center the container and add space above and below */
+    /* Limit the maximum width of the container */
+    padding: 20px; /* Add padding inside the container */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* First Div - Form */
+.form-container {
+    width: 700px; /* Fixed width for the form */
+    padding: 20px; /* Add padding inside the form */
+    background-color: rgba(144, 140, 140, 0.319); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 15px; /* Space between elements */
+}
+
+.form-container h3 {
+    color: white; /* White text color */
+    font-family:monospace;
+    font-size: 2rem; /* Heading font size */
+    text-align: center; /* Center the heading */
+    margin: 0; /* Remove default margin */
+    background: linear-gradient(to right, whitesmoke, rgba(117, 10, 211, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.form-container p {
+    font-family:monospace;
+    color: rgb(226, 193, 226);
+    font-size: 1rem; /* Paragraph font size */
+    text-align: center; /* Center the paragraph */
+    margin: 0; /* Remove default margin */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%; /* Full width of the container */
+    padding: 10px; /* Add padding inside input fields */
+    border: 1px solid black; /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(18, 1, 1, 0.501); /* Semi-transparent background */
+    color: white; /* White text color */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem; /* Text font size */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+.form-container textarea {
+    height: 100px; /* Fixed height for the text area */
+    resize: none; /* Disable resizing */
+}
+
+.form-container button {
+    width: 40%; /* Full width of the container */
+    padding: 10px; /* Add padding inside the button */
+    background: linear-gradient(to right, rgb(117, 10, 211), rgba(0, 0, 0, 0.433));
+    color: white; /* White text color */
+    font-family:monospace;
+    font-size: 1rem; /* Text font size */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.form-container button:hover {
+    background-color: rgba(136, 0, 255, 0.988); /* Change color on hover */
+}
+
+/* Second Div - Contact Section */
+.contact-container {
+    width: 400px; /* Fixed width for the contact section */
+    padding: 20px; /* Add padding inside the contact section */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Space between elements */
+    margin-top: 100px;
+}
+
+.contact-container h3 {
+    color: white; /* White text color */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem; /* Heading font size */
+    text-align: center; /* Center the heading */
+    margin: 0; /* Remove default margin */
+    
+}
+
+.contact-container p {
+    color: rgba(255, 255, 255, 0.696); /* White text color */
+    font-family: monospace;
+    font-size: 1rem; /* Paragraph font size */
+    text-align: center; /* Center the paragraph */
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack divs vertically on smaller screens */
+        align-items: center; /* Center the divs */
+        gap: 30px; /* Reduce space between divs */
+    }
+
+    .form-container {
+        width: 300px; /* Reduce width for mobile devices */
+        height: 400px;
+    }
+
+    .form-container h3 {
+        font-size: 1.1rem; /* Smaller heading font size */
+    }
+
+    .form-container p {
+        font-size: 0.7rem; /* Smaller paragraph font size */
+    }
+
+    .form-container input,
+    .form-container textarea {
+        padding: 5px; /* Reduce padding inside input fields */
+        font-size: 0.6rem; /* Smaller text font size */
+    }
+
+    .form-container textarea {
+        height: 60px; /* Reduce height for the text area */
+    }
+
+    .form-container button {
+        padding: 5px; /* Reduce padding inside the button */
+        font-size: 0.8rem; /* Smaller text font size */
+    }
+
+    .contact-container {
+        width: 300px; /* Reduce width for mobile devices */
+        height: 200px;
+        margin-top: -10px;
+    }
+
+    .contact-container h3 {
+        font-size: 0.8rem; /* Smaller heading font size */
+    }
+
+    .contact-container p {
+        font-size: 0.9rem; /* Smaller paragraph font size */
+        width: 100%;;
+    }
+}
+/* css for conatct form ended */
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+    to {
+        opacity: 3;
+        transform: translateX(0);
+    }
+}
+* {
+    animation: fadeIn 1s ease-out;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+    background: #1e1e2f; /* Dark background */
+    border-radius: px;
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ae05fc, #ae00ff);
+    border-radius: 10px;
+}
+
+/* Scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient( #7500fa);
+}
+
